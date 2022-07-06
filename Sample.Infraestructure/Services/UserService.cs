@@ -92,7 +92,7 @@ namespace Sample.Infraestructure.Services
                 issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Audience"],
                 claims,
-                expires: DateTime.Now.AddMinutes(1),
+                expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: signingCredentials);
 
             return new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
