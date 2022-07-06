@@ -24,7 +24,7 @@ namespace Sample.Presentation.Controllers.API
         //    return Ok(await Mediator.Send(new GetCentroByIdQuery { Id = id }));
         //}
 
-        [HttpPost, Authorize]
+        [HttpPost, Authorize(Roles ="Admin")]
         [Route("createCategory")]
         public async Task<IActionResult> Create([FromBody]CreateCategoryCommand command)
         {

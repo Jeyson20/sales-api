@@ -59,11 +59,6 @@ namespace Sample.Infraestructure
                 {
                     OnAuthenticationFailed = c =>
                     {
-                        //c.NoResult();
-                        //c.Response.StatusCode = 500;
-                        //c.Response.ContentType = "text/plain";
-                        //return c.Response.WriteAsync(c.Exception.ToString());
-
                         c.NoResult();
                         c.Response.StatusCode = 500;
                         c.Response.ContentType = "text/plain";
@@ -77,6 +72,7 @@ namespace Sample.Infraestructure
                         context.Response.ContentType = "application/json";
                         var result = JsonConvert.SerializeObject(new Response<string>("Usted no esta autorizado"));
                         return context.Response.WriteAsync(result);
+
                     },
                     OnForbidden = context =>
                     {

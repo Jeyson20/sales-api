@@ -82,19 +82,17 @@ namespace Sample.Infraestructure.Services
 
             var claims = new[]
             {
-                new Claim("uid", Convert.ToString(request.Id)),
-                new Claim(JwtRegisteredClaimNames.GivenName, request.FirstName),
-                new Claim("SurName", request.LastName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim("name", request.FirstName +" "+ request.LastName),
                 new Claim(JwtRegisteredClaimNames.Email, request.Email),
-                //new Claim(ClaimTypes.Role, request.Rol),
+                new Claim("role" ,request.Rol),
             };
 
             var jwtSecurityToken = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddMinutes(15),
+                claims,
+                expires: DateTime.Now.AddMinutes(1),
                 signingCredentials: signingCredentials);
 
             return new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
