@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Application", "Sample.Application\Sample.Application.csproj", "{73F7F724-2817-4957-93BF-1A61702887DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Application", "Sample.Application\Test.Application.csproj", "{73F7F724-2817-4957-93BF-1A61702887DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Presentation", "Sample.Presentation\Sample.Presentation.csproj", "{B98FBB02-8BE7-4484-9547-DF326C15636B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Presentation", "Sample.Presentation\Test.Presentation.csproj", "{B98FBB02-8BE7-4484-9547-DF326C15636B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Domain", "Sample.Domain\Sample.Domain.csproj", "{4DCF793F-3120-48CE-8072-A138E8C45ED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Domain", "Sample.Domain\Test.Domain.csproj", "{4DCF793F-3120-48CE-8072-A138E8C45ED4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Infraestructure", "Sample.Infraestructure\Sample.Infraestructure.csproj", "{89C581AB-315F-422C-AC8A-5CC99941C1B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Infraestructure", "Sample.Infraestructure\Test.Infraestructure.csproj", "{89C581AB-315F-422C-AC8A-5CC99941C1B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

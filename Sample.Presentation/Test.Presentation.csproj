@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sample.Application\Sample.Application.csproj" />
-    <ProjectReference Include="..\Sample.Infraestructure\Sample.Infraestructure.csproj" />
+    <ProjectReference Include="..\Sample.Application\Test.Application.csproj" />
+    <ProjectReference Include="..\Sample.Infraestructure\Test.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>
