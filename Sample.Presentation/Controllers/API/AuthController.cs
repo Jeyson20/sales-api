@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Sample.Application.Dtos.Users;
 using Sample.Application.Features.Users.Commands;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Threading.Tasks;
 
 namespace Sample.Presentation.Controllers.API
@@ -10,11 +10,10 @@ namespace Sample.Presentation.Controllers.API
     [ApiController]
     public class AuthController : BaseAPIController
     {
-
-        [HttpPost("login")]
+        [HttpPost]
+        [SwaggerOperation(Summary = "Login: generar token para acceder a controladores")]
         public async Task<IActionResult> AutheticationAsync(AuthRequest request)
         {
-
             return Ok(await Mediator.Send(new AutheticateCommand
             {
                 Email = request.Email,

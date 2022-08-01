@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using Sample.Application.Features.Categories.Commands;
+using Sample.Application.Features.Customers.Commands.Create;
 using Sample.Domain.Entities;
 
 namespace Sample.Application.Mappings
@@ -18,9 +19,8 @@ namespace Sample.Application.Mappings
             #endregion
             #region Commands 
 
-            // nos ahorra codigo para hacer instancias de la clase pacientes sin tener que poner paciente.nombre.....
-
             CreateMap<CreateCategoryCommand, Category>();
+            CreateMap<CreateCustomerCommand, Customer>();
             // CreateMap<RegisterCommand, Usuarios>();
             #endregion
         }

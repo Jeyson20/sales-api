@@ -26,10 +26,11 @@ namespace Sample.Infraestructure.Services
         }
         public async Task<AuthResponse> AuthenticateAsync(AuthRequest request)
         {
-            var user = await _repositoryAsync.Find(x => x.Email == request.Email && x.Password == Encryption.Encrypt(request.Password));
+            var user = await _repositoryAsync.Find(x => x.Email == request.Email &&
+                              x.Password == Encryption.Encrypt(request.Password));
             if (user == null)
                 throw new ApiException("Usuario o Contraseña incorrecta");
-            if(user.State == "Inactive")
+            if (user.State == "Inactive")
                 throw new ApiException("Usuario inactivo, comuniquese con el administrador");
 
             AuthResponse response = new()
@@ -46,7 +47,6 @@ namespace Sample.Infraestructure.Services
                 },
                 RefreshToken = "Jeyson" //Arreglar
             };
-
             return response;
         }
         public async Task<Response<int>> RegisterAsync(UserRequest request)
@@ -67,7 +67,7 @@ namespace Sample.Infraestructure.Services
 
             var result = await _repositoryAsync.Add(user);
             if (result != null)
-                return new Response<int>(result.Id, message: $"Usuario registrado exitosamente. {request.Email}");
+                return new Response<int>(result.Id, message: "Usuario registrado exitosamente");
             else
                 throw new ApiException("Ocurrio un error al crear Usuario");
         }

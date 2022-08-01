@@ -91,7 +91,7 @@ namespace Sample.Infraestructure.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
-                    b.Property<int?>("CityId")
+                    b.Property<int>("CityId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
@@ -157,7 +157,7 @@ namespace Sample.Infraestructure.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int?>("CustomerId")
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("LastModified")
@@ -206,7 +206,7 @@ namespace Sample.Infraestructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
@@ -306,7 +306,9 @@ namespace Sample.Infraestructure.Migrations
                 {
                     b.HasOne("Sample.Domain.Entities.City", "City")
                         .WithMany()
-                        .HasForeignKey("CityId");
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("City");
                 });
@@ -315,7 +317,9 @@ namespace Sample.Infraestructure.Migrations
                 {
                     b.HasOne("Sample.Domain.Entities.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
                 });
@@ -343,7 +347,9 @@ namespace Sample.Infraestructure.Migrations
                 {
                     b.HasOne("Sample.Domain.Entities.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
                 });

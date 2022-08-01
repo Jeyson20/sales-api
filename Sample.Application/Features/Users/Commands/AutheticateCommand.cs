@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Sample.Application.Dtos.Users;
 using Sample.Application.Interfaces;
-using Sample.Application.Wrappers;
 using System.Threading;
 using System.Threading.Tasks;
 

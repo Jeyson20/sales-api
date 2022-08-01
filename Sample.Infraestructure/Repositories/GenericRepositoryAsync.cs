@@ -40,7 +40,7 @@ namespace Sample.Infraestructure.Repositories
         public async Task<IEnumerable<T>> GetAll()
             => await entitySet.ToListAsync();
 
-        public async Task<T> GetbyId(int? id)
+        public async Task<T> GetbyId(int id)
             => await entitySet.FindAsync(id);
 
         public async Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate)
